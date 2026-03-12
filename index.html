@@ -88,10 +88,9 @@
             font-size: 1.05rem;
         }
         ul li::marker {
-            color: #c0392b; /* приглушённый красный для маркеров */
+            color: #c0392b;
         }
 
-        /* Уменьшенная таблица, синяя шапка */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -103,7 +102,7 @@
             font-size: 0.95rem;
         }
         th {
-            background: #1e3a5f; /* синий */
+            background: #1e3a5f;
             color: #ffffff;
             font-weight: 600;
             padding: 0.7rem 1rem;
@@ -121,7 +120,7 @@
 
         .note {
             background: #f0f5fb;
-            border-left: 8px solid #1e3a5f; /* синий */
+            border-left: 8px solid #1e3a5f;
             padding: 1.4rem 2rem;
             border-radius: 1rem;
             margin: 2.2rem 0;
@@ -129,7 +128,7 @@
 
         .badge {
             display: inline-block;
-            background: #1e3a5f; /* синий */
+            background: #1e3a5f;
             color: #ffffff;
             padding: 0.15rem 1.2rem;
             border-radius: 2rem;
@@ -162,7 +161,7 @@
             font-weight: 650;
             color: #102f48;
             margin-bottom: 0.8rem;
-            border-left: 5px solid #1e3a5f; /* синий */
+            border-left: 5px solid #1e3a5f;
             padding-left: 0.7rem;
         }
 
@@ -179,7 +178,6 @@
             text-decoration: underline wavy #ffb5b5 2px;
         }
 
-        /* Вкладки */
         .tabs {
             display: flex;
             gap: 0.5rem;
@@ -206,7 +204,7 @@
         }
         .tab-button.active {
             background: #ffffff;
-            border-color: #c0392b #b0c4de #ffffff #b0c4de; /* красная обводка сверху и по бокам */
+            border-color: #c0392b #b0c4de #ffffff #b0c4de;
             color: #0f2b4b;
             font-weight: 700;
             border-top: 2px solid #c0392b;
@@ -222,35 +220,28 @@
             display: block;
         }
 
-        /* Фиксированная навигация (путеводитель) */
-        .floating-nav {
-            position: fixed;
-            left: 10px;
-            top: 120px;
-            background: #ffffff;
-            border: 1px solid #c0392b;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            padding: 0.8rem;
-            z-index: 1000;
+        /* Навигация по разделам (только на первой вкладке) */
+        .quick-nav {
             display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            min-width: 160px;
-            transition: opacity 0.2s;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.5rem 0 2rem 0;
+            padding: 0.8rem 0;
+            border-top: 2px solid #c0392b;
+            border-bottom: 2px solid #c0392b;
         }
-        .floating-nav a {
+        .quick-nav a {
             text-decoration: none;
             color: #1e3a5f;
             font-weight: 500;
-            font-size: 1rem;
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            border: 1px solid transparent;
+            font-size: 1.1rem;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            border: 1px solid #c0392b;
+            background: #fde9e9;
             transition: 0.1s;
-            white-space: nowrap;
         }
-        .floating-nav a:hover {
+        .quick-nav a:hover {
             background: #c0392b;
             color: #ffffff;
             border-color: #a03226;
@@ -313,7 +304,7 @@
             .tabs { flex-direction: column; }
             .tab-button { border-radius: 0.5rem; border-bottom: 1px solid #b0c4de; margin-bottom: 0; }
             .tab-button.active { border-color: #c0392b; }
-            .floating-nav { display: none; } /* на мобильных убираем, чтобы не мешал */
+            .quick-nav { justify-content: center; }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
@@ -326,14 +317,7 @@
 
         <h1>Помощь выбора комплектующих для ПК, основываясь на данных 2025-2026 года</h1>
 
-        <div class="tabs">
-            <button class="tab-button active" id="tab1-btn">Компоненты</button>
-            <button class="tab-button" id="tab2-btn">Сборки + советы</button>
-            <button class="tab-button" id="tab3-btn">Видео</button>
-        </div>
-
-        <!-- Плавающая навигация (будет видна только на первой вкладке) -->
-        <div class="floating-nav" id="floatingNav">
+        <div class="quick-nav" id="quickNav">
             <a href="#cpu">Процессор</a>
             <a href="#motherboard">Материнская плата</a>
             <a href="#ram">ОЗУ</a>
@@ -343,9 +327,13 @@
             <a href="#case">Корпус</a>
         </div>
 
-        <!-- Вкладка 1 -->
+        <div class="tabs">
+            <button class="tab-button active" id="tab1-btn">Компоненты</button>
+            <button class="tab-button" id="tab2-btn">Сборки + советы</button>
+            <button class="tab-button" id="tab3-btn">Видео</button>
+        </div>
+
         <div id="tab1" class="tab-content active">
-            <!-- все разделы с id для навигации -->
             <section id="cpu">
                 <h2>Процессор (CPU)</h2>
                 <p><strong>Процессор</strong> — это основной электронный компонент, который является «мозгом» компьютера и отвечает за выполнение всех команд, обработку данных и управление другими компонентами системы. Он выполняет арифметические и логические операции, обрабатывает инструкции программ, управляет доступом к памяти (ОЗУ, кэш) и обеспечивает взаимодействие с периферийными устройствами. Следует с умом подходить к выбору процессора и не продешевить. Если вам пропели всю голову про видеокарты не стоит весь бюджет основывать на стоимости видеокарты. Самая важная часть компьютера. Все вы наверняка слышали о таких производителях как Intel и AMD, далее мы их рассмотрим.</p>
@@ -515,7 +503,6 @@
             </section>
         </div>
 
-        <!-- Вкладка 2 -->
         <div id="tab2" class="tab-content">
             <section>
                 <h2>Основные типы сборок (актуально на 2025-2026 гг.)</h2>
@@ -570,7 +557,6 @@
                 Баланс и цель — по-прежнему главные правила. Не создавайте «бутылочных горлышек» (слабый CPU с мощной GPU, медленная RAM с топовым процессором). Определите ключевую задачу ПК, отталкивайтесь от неё при выборе видеокарты или процессора. Не экономьте на блоке питания и корпусе — это основа стабильности и долговечности. Технологии 2026 года (ИИ-ускорение, новые стандарты подключения) делают грамотный подбор компонентов ещё более важным для получения актуальной системы на годы вперед.</p>
         </div>
 
-        <!-- Вкладка 3 -->
         <div id="tab3" class="tab-content">
             <section>
                 <h2>Полезные видео по сборке и выбору комплектующих для ПК</h2>
@@ -606,7 +592,7 @@
         const tab1 = document.getElementById('tab1');
         const tab2 = document.getElementById('tab2');
         const tab3 = document.getElementById('tab3');
-        const floatingNav = document.getElementById('floatingNav');
+        const quickNav = document.getElementById('quickNav');
 
         function activateTab(activeTab, activeBtn) {
             [tab1, tab2, tab3].forEach(t => t.classList.remove('active'));
@@ -614,11 +600,10 @@
             activeTab.classList.add('active');
             activeBtn.classList.add('active');
 
-            // Показываем навигацию только на первой вкладке
             if (activeTab === tab1) {
-                floatingNav.style.display = 'flex';
+                quickNav.style.display = 'flex';
             } else {
-                floatingNav.style.display = 'none';
+                quickNav.style.display = 'none';
             }
         }
 
@@ -626,7 +611,6 @@
         tab2Btn.addEventListener('click', () => activateTab(tab2, tab2Btn));
         tab3Btn.addEventListener('click', () => activateTab(tab3, tab3Btn));
 
-        // по умолчанию активна первая вкладка
         activateTab(tab1, tab1Btn);
     </script>
 </body>
