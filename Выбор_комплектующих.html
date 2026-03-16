@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Помощь выбора комплектующих для ПК (2025-2026)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f5f7fa;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-size: 200%;
+            color: #1e2f3d;
+            line-height: 1.5;
+            padding: 1.5rem 0.8rem;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 1.5rem;
+            padding: 2rem 1.8rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 1px solid #d0ddee;
+        }
+
+        .header-meta {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: #1e3a5f;
+            border-bottom: 2px solid #b0c4de;
+            padding-bottom: 0.8rem;
+        }
+        .header-meta .date {
+            background: #eef3f9;
+            padding: 0.3rem 1.2rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            border: 1px solid #b0c4de;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #0f2b4b;
+            margin: 0.2rem 0 0.5rem 0;
+            border-left: 8px solid #1e3a5f;
+            padding-left: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.1rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1rem 0;
+            color: #0f2f48;
+            border-bottom: 3px solid #b0c4de;
+            padding-bottom: 0.3rem;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: 1.8rem 0 0.5rem 0;
+            color: #1b3f5e;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.07rem;
+            color: #1e3a5f;
+        }
+
+        ul, ol {
+            margin: 0.5rem 0 1.8rem 1.8rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+        ul li::marker {
+            color: #c0392b;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0 2.5rem;
+            border-radius: 0.8rem;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            border: 1px solid #b0c4de;
+            font-size: 0.95rem;
+        }
+        th {
+            background: #1e3a5f;
+            color: #ffffff;
+            font-weight: 600;
+            padding: 0.7rem 1rem;
+            text-align: left;
+            border-right: 1px solid #a0b8d0;
+        }
+        th:last-child { border-right: none; }
+        td {
+            background: #ffffff;
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid #d0ddee;
+            vertical-align: top;
+        }
+        tr:last-child td { border-bottom: none; }
+
+        .note {
+            background: #f0f5fb;
+            border-left: 8px solid #1e3a5f;
+            padding: 1.4rem 2rem;
+            border-radius: 1rem;
+            margin: 2.2rem 0;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #1e3a5f;
+            color: #ffffff;
+            padding: 0.15rem 1.2rem;
+            border-radius: 2rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+            border: 1px solid #0f2b4b;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 1rem;
+            padding: 1.8rem 1.5rem;
+            border: 1px solid #b0c4de;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: 0.15s;
+        }
+        .card:hover {
+            border-color: #1e3a5f;
+            box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+        }
+        .card h4 {
+            font-size: 1.6rem;
+            font-weight: 650;
+            color: #102f48;
+            margin-bottom: 0.8rem;
+            border-left: 5px solid #1e3a5f;
+            padding-left: 0.7rem;
+        }
+
+        .footer-note {
+            background: #1e3a5f;
+            color: #ffffff;
+            padding: 2rem 2.2rem;
+            border-radius: 1.5rem;
+            margin-top: 3rem;
+            border: 1px solid #a0b8d0;
+        }
+        .footer-note strong {
+            color: #ffffff;
+            text-decoration: underline wavy #ffb5b5 2px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin: 2rem 0 1.5rem;
+            border-bottom: 3px solid #b0c4de;
+            padding-bottom: 0;
+            flex-wrap: wrap;
+        }
+        .tab-button {
+            background: #eef3f9;
+            border: 1px solid #b0c4de;
+            padding: 0.8rem 2rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #13293f;
+            cursor: pointer;
+            border-radius: 0.5rem 0.5rem 0 0;
+            border-bottom: none;
+            transition: 0.1s;
+            margin-bottom: -1px;
+        }
+        .tab-button:hover {
+            background: #dde6f2;
+        }
+        .tab-button.active {
+            background: #ffffff;
+            border-color: #c0392b #b0c4de #ffffff #b0c4de;
+            color: #0f2b4b;
+            font-weight: 700;
+            border-top: 2px solid #c0392b;
+            border-left: 2px solid #c0392b;
+            border-right: 2px solid #c0392b;
+            border-bottom: none;
+        }
+
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Навигация по разделам (только на первой вкладке) */
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.5rem 0 2rem 0;
+            padding: 0.8rem 0;
+            border-top: 2px solid #c0392b;
+            border-bottom: 2px solid #c0392b;
+        }
+        .quick-nav a {
+            text-decoration: none;
+            color: #1e3a5f;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            border: 1px solid #c0392b;
+            background: #fde9e9;
+            transition: 0.1s;
+        }
+        .quick-nav a:hover {
+            background: #c0392b;
+            color: #ffffff;
+            border-color: #a03226;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .video-item {
+            background: #ffffff;
+            border-radius: 1rem;
+            padding: 0.8rem 0.8rem 1.2rem;
+            border: 1px solid #b0c4de;
+        }
+        .video-item iframe {
+            width: 100%;
+            height: 210px;
+            border-radius: 0.8rem;
+            border: none;
+            background: #d9e2ef;
+        }
+        .video-item p {
+            margin-top: 0.8rem;
+            font-weight: 500;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .go-up {
+            position: fixed;
+            bottom: 2rem;
+            right: 1.5rem;
+            background: #1e3a5f;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            border: 2px solid #b0c4de;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: 0.1s;
+            text-decoration: none;
+            z-index: 999;
+        }
+        .go-up:hover {
+            background: #2b6c8f;
+            border-color: #ffffff;
+        }
+
+        @media (max-width: 700px) {
+            .container { padding: 1.2rem 0.8rem; }
+            h1 { font-size: 2.2rem; }
+            .tabs { flex-direction: column; }
+            .tab-button { border-radius: 0.5rem; border-bottom: 1px solid #b0c4de; margin-bottom: 0; }
+            .tab-button.active { border-color: #c0392b; }
+            .quick-nav { justify-content: center; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container" id="top">
+        <div class="header-meta">
+            <div class="date">2026 Год</div>
+        </div>
+
+        <h1>Помощь выбора комплектующих для ПК, основываясь на данных 2025-2026 года</h1>
+
+        <div class="quick-nav" id="quickNav">
+            <a href="#cpu">Процессор</a>
+            <a href="#motherboard">Материнская плата</a>
+            <a href="#ram">ОЗУ</a>
+            <a href="#storage">Накопители</a>
+            <a href="#gpu">Видеокарта</a>
+            <a href="#psu">БП</a>
+            <a href="#case">Корпус</a>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-button active" id="tab1-btn">Компоненты</button>
+            <button class="tab-button" id="tab2-btn">Сборки + советы</button>
+            <button class="tab-button" id="tab3-btn">Видео</button>
+        </div>
+
+        <div id="tab1" class="tab-content active">
+            <section id="cpu">
+                <h2>Процессор (CPU)</h2>
+                <p><strong>Процессор</strong> — это основной электронный компонент, который является «мозгом» компьютера и отвечает за выполнение всех команд, обработку данных и управление другими компонентами системы. Он выполняет арифметические и логические операции, обрабатывает инструкции программ, управляет доступом к памяти (ОЗУ, кэш) и обеспечивает взаимодействие с периферийными устройствами. Следует с умом подходить к выбору процессора и не продешевить. Если вам пропели всю голову про видеокарты не стоит весь бюджет основывать на стоимости видеокарты. Самая важная часть компьютера. Все вы наверняка слышали о таких производителях как Intel и AMD, далее мы их рассмотрим.</p>
+
+                <p>Кэш-память процессора (L1, L2, L3) играет огромную роль в производительности. Чем больше кэш, тем быстрее процессор получает доступ к часто используемым данным, что особенно важно в играх и базах данных. У современных процессоров объём L3 может достигать 128 МБ (например, у моделей с 3D V-Cache). Также обратите внимание на поддержку инструкций (AVX-512, AVX2) — они ускоряют научные расчёты и эмуляцию. Разблокированный множитель (серии K у Intel и все Ryzen) позволяет разгонять процессор, но требует качественной материнской платы и охлаждения.</p>
+
+                <table>
+                    <thead><tr><th>Критерий</th><th>Intel</th><th>AMD</th></tr></thead>
+                    <tbody>
+                        <tr><td>Архитектура</td><td>Гибридная (Performance-ядра + Efficient-ядра) с 12-го поколения.</td><td>Монолитная, чиплетная (несколько блоков), с акцентом на много однородных ядер.</td></tr>
+                        <tr><td>Производительность</td><td>Отличная однопоточная, хороша для игр и общей отзывчивости.</td><td>Высокая многопоточная (рендеринг, многозадачность).</td></tr>
+                        <tr><td>Игры</td><td>Часто лидер в пиковой FPS из-за высокой частоты и однопотока.</td><td>Сильная, особенно с 3D V-Cache для игр, где важен кэш.</td></tr>
+                        <tr><td>Энергоэффективность</td><td>Высокое пиковое потребление и тепловыделение (особенно флагманы), требует мощного охлаждения.</td><td>Более энергоэффективны в среднем и высоком сегментах, меньше греются.</td></tr>
+                        <tr><td>Цена / количество ядер</td><td>Дороже за сопоставимое количество ядер, чем AMD.</td><td>Больше ядер/потоков за ту же цену, выгоднее в среднем сегменте.</td></tr>
+                        <tr><td>Память</td><td>Поддержка DDR4 и DDR5 (выбор), PCIe 5.0.</td><td>Поддержка DDR5 (только) и PCIe 5.0 (Ryzen 7000+).</td></tr>
+                        <tr><td>Разгон</td><td>Открытый множитель у K/KF серий; требует хорошего охлаждения.</td><td>Часто открытый множитель, лучше для оверклокинга в целом.</td></tr>
+                        <tr><td>Встроенная графика</td><td>Мощная графика Intel (iGPU) для систем без дискретной карты.</td><td>Есть, но часто слабее, кроме APU (G-серии).</td></tr>
+                    </tbody>
+                </table>
+
+                <p>При выборе процессора важно учитывать не только текущие задачи, но и планы на будущее. Например, платформа AMD AM5 обещает поддержку новых поколений процессоров до 2027 года, тогда как Intel часто меняет сокеты, что может потребовать замены материнской платы при апгрейде. Если вы собираете игровой ПК, обратите внимание на модели с 3D V-Cache от AMD — они показывают лучшую производительность в играх благодаря дополнительному кэшу. Для рабочих станций важнее многопоточность: здесь Intel с гибридной архитектурой (P- и E-ядра) или AMD с большим количеством однородных ядер предлагают разные компромиссы. Также не забывайте про тепловыделение: мощные процессоры, такие как Core i9-15900K или Ryzen 9 9950X, требуют качественного охлаждения, иначе они будут снижать частоты (троттлить) под нагрузкой. Встроенная графика может быть полезна для диагностики или офисных задач без дискретной карты — у Intel она заметно мощнее, чем у большинства чипов AMD (кроме серии G).</p>
+
+                <p>Ещё один важный аспект — соотношение цены и производительности. В среднем сегменте AMD традиционно предлагает больше ядер за те же деньги, что делает их выгодным выбором для стримеров и монтажёров. Однако Intel сохраняет лидерство в однопоточных задачах и некоторых играх благодаря высоким частотам. Поэтому перед покупкой стоит изучить тесты именно в ваших приложениях — универсального лидера нет.</p>
+            </section>
+
+            <section id="motherboard">
+                <h2>Материнская плата</h2>
+                <p><strong>Материнская плата</strong> — это основная печатная плата компьютера, которая соединяет все его компоненты и обеспечивает их взаимодействие. Она служит основой для процессора, оперативной памяти, видеокарты, накопителей и других устройств, координируя их работу, распределяя питание и передачу данных между ними. Её следует выбирать под процессор (если вы выберете не подходящие друг другу комплектующие, то сами понимаете что ничего собрать у вас не получится).</p>
+
+                <p>Подсистема питания (VRM) — один из ключевых элементов. Чем больше фаз питания и качественнее компоненты (DrMOS, твёрдотельные конденсаторы), тем стабильнее работа процессора, особенно при разгоне. Для мощных CPU (16+ ядер) нужна материнская плата с усиленным VRM и радиаторами на нём. Также обратите внимание на чипсет: для AMD B650 — достаточный минимум, X670E даёт больше линий PCIe 5.0; для Intel B760 — для неразгоняемых процессоров, Z790 — для разгона и большего количества портов.</p>
+
+                <h3>Размер материнской платы</h3>
+                <ul>
+                    <li><span class="badge">ATX</span> Стандартная плата которая может быть установлена на большинство ПК.</li>
+                    <li><span class="badge">Micro-ATX</span> это более компактная плата но выполняет те же функции что и ATX.</li>
+                    <li><span class="badge">Mini-ATX</span> Эта плата отличается небольшими размерами и ограниченным количеством портов (Подходит для маленьких сборок ПК).</li>
+                </ul>
+
+                <h3>Сокет</h3>
+                <p>Он определяет, какие процессоры, чипсеты, память и системы охлаждения подходят к материнской плате. Сокет нужно выбирать так чтобы комплектующие к нему обязательно подходили!</p>
+                <p><strong>Сокет LGA (Land Grid Array)</strong> отличается наличием упругих контактных «ножек» на самой площадке. Процессоры для таких сокетов имеют плоскую контактную поверхность. С 2004-2005 годов этот тип стал стандартом для материнских плат Intel. Компания AMD также применяет LGA в серверных и топовых решениях, а в массовом сегменте он появится в 2022 году вместе с платформой AM5 для процессоров Zen 4. <em>Особенность обращения:</em> Требует осторожности, так как нежные контактные ножки на сокете легко повредить даже при незначительном механическом воздействии.</p>
+                <p><strong>Сокет PGA (Pin Grid Array)</strong> конструктивно противоположен: контактные отверстия находятся в пластиковом корпусе сокета, а выводы-«ножки» расположены на процессоре. Этот тип использовала Intel до 2004 года, а среди современных процессоров характерен для AMD Ryzen и более ранних моделей этой компании. <em>Особенность обращения:</em> Сам сокет достаточно защищён, но требует аккуратности при установке процессора, так как легко погнуть именно его контактные ножки.</p>
+
+                <h3>Внутренние интерфейсы и разъёмы</h3>
+                <p>Ключевым элементом материнской платы, помимо процессорного сокета, является множество внутренних разъёмов для установки компонентов, которые вместе образуют системный блок.</p>
+                <ul>
+                    <li><strong>Слоты оперативной памяти</strong> — продолговатые разъёмы, обычно вертикально справа от процессора. Количество от двух до восьми. Современные платы используют DDR4 или DDR5.</li>
+                    <li><strong>Слоты расширения PCI-Express:</strong> PCI-E x16 (самый крупный, для видеокарты), PCI-E x1 (для периферии), реже x4 и x8.</li>
+                    <li><strong>Слоты M.2</strong> — для компактных SSD (PCIe или SATA). Количество от 0 до 5.</li>
+                    <li><strong>SATA-разъёмы</strong> — для классических накопителей 2.5"/3.5" и оптических приводов.</li>
+                    <li><strong>Разъёмы передней панели</strong> — кнопки включения/сброса, индикаторы, USB 2.0/3.0, аудио, COM, RGB.</li>
+                </ul>
+                <p>Современные материнские платы также оснащаются встроенным звуком (кодеки ALC1220, ALC4080) и сетевыми контроллерами 2.5GbE или даже 10GbE. Для любителей RGB есть разъёмы для подсветки (4-pin 12V и 3-pin 5V ARGB).</p>
+            </section>
+
+            <section id="ram">
+                <h2>Оперативная память (RAM)</h2>
+                <p><strong>Оперативная память</strong> — это энергозависимая, высокоскоростная временная память компьютера, необходимая процессору для хранения данных запущенных программ, операционной системы и драйверов в текущий момент. Она обеспечивает быстрый доступ к информации, но очищается при выключении питания.</p>
+                <p>Оперативная память прошла значительный путь развития и представлена сегодня несколькими ключевыми разновидностями:</p>
+                <ul>
+                    <li><strong>DRAM (Dynamic RAM)</strong> — динамическая память, основа большинства современных компьютеров.</li>
+                    <li><strong>SDRAM (Synchronous DRAM)</strong> — синхронная, работает в такт с процессором.</li>
+                    <li><strong>DDR SDRAM (Double Data Rate)</strong> — удваивает скорость передачи. Поколения: DDR2, DDR3, DDR4 (стандарт для большинства современных ПК), DDR5 (новейшее с макс. пропускной способностью).</li>
+                    <li><strong>LPDDR (Low Power DDR)</strong> — низковольтная для мобильных устройств.</li>
+                    <li><strong>GDDR (Graphics DDR)</strong> — специализированная для видеокарт.</li>
+                    <li><strong>ECC RAM</strong> — с коррекцией ошибок для серверов и рабочих станций.</li>
+                </ul>
+                <p>Тайминги (CAS Latency, CL) не менее важны, чем частота. Например, DDR5-6000 CL30 будет быстрее в играх, чем DDR5-6400 CL40. Оптимальный режим работы — двухканальный, поэтому модули лучше ставить парами. Для процессоров AMD Ryzen особенно важна частота Infinity Fabric, которая синхронизируется с частотой памяти (обычно 1:1 до 6000 МГц). Превышение этой частоты приводит к рассинхронизации и падению производительности.</p>
+            </section>
+
+            <section id="storage">
+                <h2>Накопители данных</h2>
+                <p>Устройство для долговременного хранения данных (операционная система, программы, файлы), работающее медленнее оперативной памяти, но с большим объёмом. Основные типы:</p>
+                <ul>
+                    <li><strong>HDD (жёсткий диск)</strong> — вращающиеся магнитные диски. Низкая цена за гигабайт, большая ёмкость, но невысокая скорость, шум, чувствительность к ударам.</li>
+                    <li><strong>SSD (твердотельный накопитель)</strong> — микросхемы флеш-памяти. Высокая скорость, бесшумность, низкое энергопотребление, но дороже HDD.</li>
+                    <li><strong>NVMe SSD</strong> — высокопроизводительный SSD, подключается по PCIe (протокол NVMe). Максимальная скорость чтения/записи.</li>
+                    <li><strong>SSHD (гибридный накопитель)</strong> — комбинация HDD и небольшого SSD-кэша для ускорения часто используемых файлов.</li>
+                    <li><strong>NAS (сетевое хранилище)</strong> — специализированное устройство с несколькими накопителями для доступа по сети, часто с RAID.</li>
+                </ul>
+                <p>Типы флеш-памяти: SLC (1 бит на ячейку) — самый быстрый и долговечный, но дорогой; MLC (2 бита) — баланс; TLC (3 бита) — самый массовый; QLC (4 бита) — дешёвый, но медленный на запись и с низким ресурсом. Для системного диска рекомендуется TLC или MLC с DRAM-буфером. NVMe SSD с интерфейсом PCIe 5.0 достигают скоростей более 10 ГБ/с, но требуют активного охлаждения (радиатор на материнской плате).</p>
+            </section>
+
+            <section id="gpu">
+                <h2>Видеокарта (GPU)</h2>
+                <p><strong>Видеокарта (видеоадаптер, графический ускоритель)</strong> — это ключевой компонент компьютера, преобразующий графические данные в изображение на экране. В 2026 году её роль выходит далеко за рамки графики: современный GPU отвечает за трассировку лучей, работу с ИИ и создание фотореалистичных миров.</p>
+
+                <h3>Основные компоненты</h3>
+                <ul>
+                    <li><strong>Графический процессор (GPU):</strong> выполняет вычисления для рендеринга.</li>
+                    <li><strong>Видеопамять (VRAM):</strong> хранит текстуры, буферы и данные ИИ-моделей.</li>
+                    <li><strong>Система охлаждения:</strong> радиаторы и вентиляторы.</li>
+                    <li><strong>Видеовыходы:</strong> HDMI 2.1, DisplayPort 2.1.</li>
+                </ul>
+
+                <h3>Ключевые параметры выбора в 2026 году</h3>
+                <ul>
+                    <li><strong>Производитель GPU:</strong> 
+                        <ul>
+                            <li><strong>NVIDIA</strong> — передовые технологии (DLSS 4.5, трассировка лучей), стандарт для ИИ и 3D.</li>
+                            <li><strong>AMD</strong> — хорошее соотношение цены и производительности, часто больше VRAM.</li>
+                            <li><strong>Intel</strong> — бюджетный и средний сегмент, отличная работа с видеокодеками.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Объём видеопамяти (VRAM):</strong>
+                        <ul>
+                            <li><strong>8 ГБ</strong> — минимум для Full HD.</li>
+                            <li><strong>12 ГБ</strong> — оптимально для 1440p.</li>
+                            <li><strong>16+ ГБ</strong> — для 4K и работы с ИИ.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Тип памяти:</strong> <strong>GDDR7</strong> — новейший стандарт, заметно быстрее GDDR6X.</li>
+                    <li><strong>Шина памяти:</strong> 128 бит (1080p), 192–256 бит (1440p), 320+ бит (4K).</li>
+                    <li><strong>Производитель карты (бренд):</strong> ASUS, MSI, Gigabyte, Palit — качественная сборка и охлаждение.</li>
+                    <li><strong>Габариты и охлаждение:</strong> мощные карты занимают 3–4 слота — проверьте совместимость с корпусом.</li>
+                </ul>
+
+                <p>Системы охлаждения бывают эталонные (референсные) и нереференсные с улучшенными вентиляторами. У нереференсных моделей лучше отвод тепла и они тише, но занимают больше места. Также важно наличие подсветки и backplate для жёсткости. Поддержка DirectX 12 Ultimate, Vulkan и OpenGL важна для современных игр. Для профессиональных задач (машинное обучение, рендеринг) нужны драйверы NVIDIA Studio или AMD Pro.</p>
+
+                <h3>Главные технологии 2026 года</h3>
+                <ul>
+                    <li><strong>DLSS 4.5 (NVIDIA):</strong> нейронный рендеринг, супер-разрешение и генерация кадров (Dynamic MFG) для 240+ FPS без задержек.</li>
+                    <li><strong>FSR Redstone (AMD):</strong> ИИ-масштабирование и реконструкция освещения (Ray Regeneration).</li>
+                    <li><strong>XeSS 3 (Intel):</strong> поддержка генерации кадров.</li>
+                    <li><strong>ИИ-ассистенты (ACE):</strong> NPC с реалистичным диалогом на базе малых языковых моделей.</li>
+                </ul>
+
+                <h3>Актуальные модели 2026 (кратко)</h3>
+                <ul>
+                    <li><strong>Флагманы (4K):</strong> RTX 5090 (32 ГБ GDDR7), RTX 5080 (16 ГБ), RX 9070 XT (16 ГБ).</li>
+                    <li><strong>Оптимальные (1440p):</strong> RTX 5070 Ti / 5070, RX 9070, RTX 5060 Ti (16 ГБ).</li>
+                    <li><strong>Бюджетные / 1080p:</strong> RX 9060 XT, RTX 5060 (8 ГБ), Intel Arc B570 (10 ГБ).</li>
+                </ul>
+
+                <div class="note">
+                    <strong>Важно:</strong> Из-за высокого спроса на ИИ-ускорители цены на видеокарты остаются высокими, а дефицит памяти сохраняется. При выборе ориентируйтесь не только на «сырую» мощность, но и на экосистему технологий (DLSS/FSR). Рекомендуемый запас VRAM на будущее — 16 ГБ. Не забывайте про мощный блок питания (TDP флагманов до 600 Вт).
+                </div>
+            </section>
+
+            <section id="psu">
+                <h2>Блок питания (БП)</h2>
+                <p><strong>Блок питания</strong> преобразует переменный ток из розетки в стабильное постоянное напряжение для компонентов, а также защищает от скачков напряжения.</p>
+                <p><strong>Сертификат 80 PLUS</strong> — специальная сертификация, отображающая уровень энергоэффективности. Покупая БП с такой отметкой вы гарантированно получите заявленные ватты при определённом уровне нагрузки.</p>
+                <h3>ATX и ATX 2.0 / 3.0</h3>
+                <p>Современные блоки питания опираются на стандарт ATX (1995). 24-контактный разъём ATX до сих пор основной. Блоки ATX 2.0 обзавелись дополнительным 4-контактным разъёмом для процессора. Позже появились 6+2 контакты для видеокарт. Стандарт ATX 3.0 (2022) отличается:</p>
+                <ul>
+                    <li><strong>Устойчивость к всплескам энергопотребления</strong> — современные процессоры и видеокарты создают кратковременные пики, старые БП могут отключаться.</li>
+                    <li><strong>Увеличенное время удержания (Hold-up time)</strong> — БП продолжает выдавать питание при пропадании напряжения в сети дольше (качественные модели до 17–20 мс).</li>
+                    <li><strong>Новый разъём питания видеокарты 12VHPWR</strong> (12V High Power) — передаёт до 600 Вт, содержит 12 силовых и 4 сигнальных контакта. Видеокарта «сообщает» о своих потребностях. Важно плотно подключать во избежание перегрева.</li>
+                </ul>
+                <p>Модульность: немодульные (все провода намертво), полумодульные (часть проводов съёмная) и полностью модульные (все кабели съёмные) — удобнее для сборки и кабель-менеджмента. Важны защиты: OVP (от перенапряжения), OCP (от перегрузки по току), SCP (от короткого замыкания) и термическая. Для мощных систем выбирайте БП с одной мощной линией +12V.</p>
+            </section>
+
+            <section id="case">
+                <h2>Корпус ПК</h2>
+                <p>Выбор корпуса определяется тремя главными факторами: совместимостью с компонентами, эффективностью воздушного потока и удобством монтажа.</p>
+                <h3>Пошаговый алгоритм выбора</h3>
+                <ol>
+                    <li><strong>Определите совместимость с материнской платой (форм-фактор):</strong> Full Tower (E-ATX), Midi Tower (ATX, Micro-ATX), Mini Tower / Compact (Micro-ATX, Mini-ITX).</li>
+                    <li><strong>Проверьте габариты ключевых компонентов:</strong> длина видеокарты, высота процессорного кулера, размер блока питания.</li>
+                    <li><strong>Оцените систему охлаждения и продуваемость:</strong> сетчатая передняя панель (Mesh), наличие предустановленных вентиляторов, поддержка СВО.</li>
+                    <li><strong>Удобство сборки и функциональность:</strong> кабельный менеджмент, пылевые фильтры, порты USB Type-A / Type-C.</li>
+                    <li><strong>Выберите материалы и дизайн:</strong> сталь, закалённое стекло, алюминий.</li>
+                </ol>
+                <p><em>Итог:</em> Для стандартной игровой или рабочей сборки оптимален Midi Tower с сетчатой передней панелью, поддержкой длинных видеокарт и местом для минимум трёх вентиляторов.</p>
+                <p>Также обратите внимание на шумоизоляцию — некоторые корпуса имеют специальные панели с шумопоглощающим покрытием. Для любителей эстетики важна подсветка RGB, которая может управляться с пульта или материнской платы. Не забывайте про возможность установки вертикального крепления видеокарты (нужен райзер-кабель).</p>
+            </section>
+        </div>
+
+        <div id="tab2" class="tab-content">
+            <section>
+                <h2>Основные типы сборок (актуально на 2025-2026 гг.)</h2>
+                <div class="grid-cards">
+                    <div class="card">
+                        <h4>Универсальный / Домашний ПК</h4>
+                        <p><strong>Назначение:</strong> Работа, учеба, медиа, веб-серфинг, нетребовательные игры.<br>
+                        <strong>Процессор:</strong> AMD Ryzen 5 8600G/9600G или Intel Core i5-14600/15600.<br>
+                        <strong>Оперативная память:</strong> 16 ГБ DDR5 (от 5600 МГц).<br>
+                        <strong>Накопители:</strong> NVMe SSD PCIe 4.0 1 ТБ, опционально HDD 2-4 ТБ.<br>
+                        <strong>Видеокарта:</strong> Опционально (мощная встройка) или дискретная RTX 4050/4060 / RX 7600.<br>
+                        <strong>Монитор:</strong> 24-27", IPS/VA, 2K, 144 Гц+ – бонус.<br>
+                        <strong>Корпус:</strong> Компактный M-ATX или ATX с хорошей вентиляцией.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Офисный / Бизнес-ПК</h4>
+                        <p><strong>Назначение:</strong> Энергоэффективная работа, офисные пакеты, CRM, видеоконференции.<br>
+                        <strong>Процессор:</strong> AMD Ryzen 5 8500G или Intel Core i5-14400/15400T.<br>
+                        <strong>Оперативная память:</strong> 16 ГБ DDR5.<br>
+                        <strong>Накопители:</strong> 512 ГБ – 1 ТБ NVMe SSD.<br>
+                        <strong>Видеокарта:</strong> Только встроенная.<br>
+                        <strong>Корпус:</strong> Компактный Mini-ITX / Micro-ATX, тихий.<br>
+                        <strong>Полезные опции:</strong> Wi-Fi 7, Bluetooth 5.4, USB-C.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Игровой / Производительный ПК</h4>
+                        <p><strong>Назначение:</strong> Игры 2К/4К, стриминг, рендеринг, ИИ.<br>
+                        <strong>Процессор:</strong> AMD Ryzen 7/9 9700X/9800X3D или Intel Core i7/i9 15700K/15900K.<br>
+                        <strong>Оперативная память:</strong> 32 ГБ DDR5 (64-128 ГБ для проф. задач), частота от 6400 МГц.<br>
+                        <strong>Накопители:</strong> NVMe SSD PCIe 5.0/4.0 1-2 ТБ + второй PCIe 4.0 SSD 2-4 ТБ.<br>
+                        <strong>Видеокарта:</strong> NVIDIA RTX 5070/5080 или AMD Radeon RX 8700 XT/8900 XT.<br>
+                        <strong>Охлаждение:</strong> 280-360 мм СЖО или башенный кулер, корпус с mesh и 3-6 вентиляторами.<br>
+                        <strong>Блок питания:</strong> от 850 Вт (флагманы 1000-1200 Вт), 80+ Gold/Platinum, ATX 3.1 / PCIe 5.1.<br>
+                        <strong>Периферия:</strong> Игровая клавиатура/мышь, монитор 27-34" OLED/IPS, 4K/2K ultrawide, 144-240 Гц.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Общие актуальные советы по выбору компонентов (2026)</h2>
+                <ul>
+                    <li><strong>Материнская плата:</strong> Чипсет под AM5 (AMD) или LGA 1851 (Intel). Ищите несколько M.2 PCIe 5.0/4.0, Wi-Fi 7, 2.5G Ethernet, USB4/Thunderbolt 4, усиленные цепи питания.</li>
+                    <li><strong>Оперативная память:</strong> DDR5 — стандарт. Два модуля (Dual Channel) с низкими задержками CL30-CL36, поддержка EXPO/XMP.</li>
+                    <li><strong>Накопители:</strong> NVMe SSD обязателен. Для большинства хватит PCIe 4.0, PCIe 5.0 актуален для рабочих станций, требует активного охлаждения. QLC – только для архивов.</li>
+                    <li><strong>Охлаждение:</strong> Термоинтерфейс важен. Современные жидкометаллические составы для максимального отвода тепла (с осторожностью).</li>
+                    <li><strong>Звук:</strong> Встроенный кодек (ALC4080 и аналоги) на хороших платах очень качественный. Отдельная звуковая карта только аудиофилам.</li>
+                    <li><strong>Сборка:</strong> Используйте онлайн-конфигураторы для проверки совместимости. Смотрите обзоры. Самостоятельная сборка даёт гибкость, проверенный системный интегратор — гарантию на весь ПК.</li>
+                </ul>
+            </section>
+
+                <p><strong>Важный итог</strong><br>
+                Баланс и цель — по-прежнему главные правила. Не создавайте «бутылочных горлышек» (слабый CPU с мощной GPU, медленная RAM с топовым процессором). Определите ключевую задачу ПК, отталкивайтесь от неё при выборе видеокарты или процессора. Не экономьте на блоке питания и корпусе — это основа стабильности и долговечности. Технологии 2026 года (ИИ-ускорение, новые стандарты подключения) делают грамотный подбор компонентов ещё более важным для получения актуальной системы на годы вперед.</p>
+        </div>
+
+        <div id="tab3" class="tab-content">
+            <section>
+                <h2>Полезные видео по сборке и выбору комплектующих для ПК</h2>
+                <div class="video-grid">
+                    <div class="video-item">
+                        <iframe src="https://vk.com/video_ext.php?oid=-198110520&id=456239301&hash=HASH_VIDEO_1&hd=1" allowfullscreen></iframe>
+                        <p>Как собрать ПК и выбрать комплектующие</p>
+                    </div>
+                    <div class="video-item">
+                        <iframe src="https://vk.com/video_ext.php?oid=-141036053&id=456239721&hash=HASH_VIDEO_2&hd=1" allowfullscreen></iframe>
+                        <p>Что делать после сборки ПК (BIOS, Windows, драйверы)</p>
+                    </div>
+                    <div class="video-item">
+                        <iframe src="https://vk.com/video_ext.php?oid=-224802208&id=456239318&hash=HASH_VIDEO_3&hd=1" allowfullscreen></iframe>
+                        <p>Дополнительное видео (советы, оптимизация)</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <hr style="border: 1px solid #b0c4de; margin: 2rem 0;">
+        <div style="display: flex; justify-content: flex-end; color: #1e3a5f;">
+            <span style="font-size: 1.5rem;">2026 · полная версия</span>
+        </div>
+    </div>
+
+    <a href="#top" class="go-up" title="наверх">⬆️</a>
+
+    <script>
+        const tab1Btn = document.getElementById('tab1-btn');
+        const tab2Btn = document.getElementById('tab2-btn');
+        const tab3Btn = document.getElementById('tab3-btn');
+        const tab1 = document.getElementById('tab1');
+        const tab2 = document.getElementById('tab2');
+        const tab3 = document.getElementById('tab3');
+        const quickNav = document.getElementById('quickNav');
+
+        function activateTab(activeTab, activeBtn) {
+            [tab1, tab2, tab3].forEach(t => t.classList.remove('active'));
+            [tab1Btn, tab2Btn, tab3Btn].forEach(b => b.classList.remove('active'));
+            activeTab.classList.add('active');
+            activeBtn.classList.add('active');
+
+            if (activeTab === tab1) {
+                quickNav.style.display = 'flex';
+            } else {
+                quickNav.style.display = 'none';
+            }
+        }
+
+        tab1Btn.addEventListener('click', () => activateTab(tab1, tab1Btn));
+        tab2Btn.addEventListener('click', () => activateTab(tab2, tab2Btn));
+        tab3Btn.addEventListener('click', () => activateTab(tab3, tab3Btn));
+
+        activateTab(tab1, tab1Btn);
+    </script>
+</body>
+</html>
